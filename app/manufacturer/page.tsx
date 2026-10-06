@@ -1,0 +1,17 @@
+import Link from "next/link";
+import { Breadcrumbs, PageIntro } from "@/components/site";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("Womenswear Manufacturer in Türkiye | OEM & Private Label", "Explore Cotiful's wholesale, OEM and private-label womenswear process, from first reference and fabric discussion to specification and export planning.", "/manufacturer/");
+
+const stages = [
+  ["01", "The brief", "Share the category, reference style, destination market, target quantity and timing. We review the request and clarify what is needed to assess it."],
+  ["02", "Style & material", "Discuss silhouette, fabric, composition, colour, finish and size range. Availability and feasibility are confirmed for the specific style."],
+  ["03", "Sample & approval", "Where sampling is agreed, align the sample brief and review the result against the approved specifications before production."],
+  ["04", "Order confirmation", "Confirm style-level minimums, quantities, price basis, payment terms and production timing in a written order confirmation."],
+  ["05", "Export planning", "Agree shipment destination, trade terms, packing details and the export documents required for the order."],
+];
+
+export default function ManufacturerPage() {
+  return <div className="page-wrap"><Breadcrumbs items={[{ label: "Manufacturing" }]} /><PageIntro eyebrow="OEM · ODM · Wholesale" title="From reference to a collection with your name on it." text="Cotiful works with fashion labels and boutiques exploring wholesale or private-label womenswear production in Türkiye. The details are shaped around the style and confirmed before an order proceeds." /><div className="two-col-copy"><h2>Built on clear specifications.</h2><div><p>Good manufacturing starts well before a cutting table. A complete brief helps align the silhouette, fabric, colour, grading, construction details and order expectations between buyer and maker.</p><p>Share a reference image or tech pack where available. The team can review the information needed to assess the style and discuss sampling, production feasibility and export planning.</p></div></div><div className="table-wrap"><table className="trade-table"><thead><tr><th>Stage</th><th>What we align</th><th>Confirmed for each style</th></tr></thead><tbody>{stages.map(([no, title, text]) => <tr key={no}><td>{title}</td><td>{text}</td><td>Scope, availability and timing</td></tr>)}</tbody></table></div><div className="two-col-copy"><h2>Fabric and finishing</h2><div><p>Fabric options depend on the season, style and availability. Composition, weight, width, colour standard and finishing details are checked against the selected material before final costing and approval.</p><p>For tailored trousers, blazers and sets, include construction references and any fit or finish priorities in the first enquiry. These details make the quotation and sample discussion more precise.</p></div></div><aside className="data-note"><b>Order facts are style-specific.</b> Minimum quantities, sampling charges, fabric availability, production lead time, payment terms and delivery terms are confirmed in writing for each order. No generic minimum or lead-time promise applies across the full range.</aside><div className="inline-cta"><h2>Have a tech pack or reference ready?</h2><Link className="button button-dark" href="/contact">Discuss your project</Link></div></div>;
+}
